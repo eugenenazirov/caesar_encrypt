@@ -1,0 +1,2 @@
+caesar:
+	poetry run caesar
