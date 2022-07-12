@@ -1,3 +1,6 @@
+import os.path
+
+
 def caesar_encrypt(path_to_file, symbols_offset):
     alphabet_EN_lower, alphabet_EN_upper =  'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     alphabet_RU_lower, alphabet_RU_upper = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя', 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
@@ -45,6 +48,7 @@ def caesar_encrypt(path_to_file, symbols_offset):
 
 
     #открываем файл на запись и шифруем
-    with open(f'{path_to_file}_encrypted', 'w') as output_f:
+    output_name, output_extension = os.path.splitext(path_to_file)
+    with open(f'{output_name}_encrypted{output_extension}', 'w') as output_f:
         output_f.writelines(encrypted_content)
     print('Successfully wrote!')
