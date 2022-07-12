@@ -39,7 +39,7 @@ def caesar_encrypt(path_to_file, symbols_offset):
                     if new_position >= len(alphabet):
                         # если порядковый номер со смещением выходит за пределы диапазона алфавита, 
                         # то приводим к диапазону
-                        new_position = (1 - position - symbols_offset) % (len(alphabet_EN_upper))
+                        new_position = (1 - position - symbols_offset) % (len(alphabet))
                     encrypted_string += alphabet[new_position]
             except ValueError: # обрабатываем исключение в случае если символ не входит в алфавит
                 encrypted_string += alpha
